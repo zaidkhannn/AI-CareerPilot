@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="14dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="@color/glass_card">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header Card Area (Clickable to Expand) -->
+        <LinearLayout
+            android:id="@+id/phase_header_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?android:attr/selectableItemBackground">
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/phase_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-bold"
+                android:text="Phase Name Here"
+                android:textColor="@color/text_primary"
+                android:textSize="15sp" />
+
+            <!-- Duration Tag -->
+            <TextView
+                android:id="@+id/phase_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="4 Weeks"
+                android:textColor="@color/colorAccent"
+                android:textSize="13sp" />
+
+            <!-- Indicator icon character (▼/▲) -->
+            <TextView
+                android:id="@+id/phase_expand_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:fontFamily="sans-serif-black"
+                android:text="▼"
+                android:textColor="@color/colorAccent"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Dynamic Expandable Details Area -->
+        <LinearLayout
+            android:id="@+id/phase_details_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingBottom="16dp"
+            android:visibility="gone">
+
+            <!-- Horizontal Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/glass_card_stroke"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Skills To Learn Checklist -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Skills Checklist:"
+                android:textColor="@color/colorAccent"
+                android:textSize="12sp"
+                android:fontFamily="sans-serif-bold"
+                android:textAllCaps="true"
+                android:layout_marginBottom="6dp" />
+
+            <!-- Dynamic Checkboxes Container -->
+            <LinearLayout
+                android:id="@+id/phase_skills_checklist_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/glass_card_stroke"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Weekly Milestones -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Weekly Milestones:"
+                android:textColor="@color/colorAccent"
+                android:textSize="12sp"
+                android:fontFamily="sans-serif-bold"
+                android:textAllCaps="true"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/phase_milestones"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Week 1...\n• Week 2..."
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/glass_card_stroke"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Enhanced Mini Project -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Featured Mini Project:"
+                android:textColor="@color/colorAccent"
+                android:textSize="12sp"
+                android:fontFamily="sans-serif-bold"
+                android:textAllCaps="true"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:id="@+id/phase_project_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Project Name"
+                android:textColor="@color/text_primary"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-bold"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/phase_project_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description of the project..."
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp"
+                android:lineSpacingExtra="3dp"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/phase_project_outcome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Expected Outcome: hostable website"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"
+                android:textStyle="italic"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/glass_card_stroke"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Recommended Resources -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recommended Resources:"
+                android:textColor="@color/colorAccent"
+                android:textSize="12sp"
+                android:fontFamily="sans-serif-bold"
+                android:textAllCaps="true"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:id="@+id/phase_res_youtube"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="YouTube: ChannelName"
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/phase_res_docs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Documentation: Official Doc"
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/phase_res_practice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Practice: PlatformName"
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/glass_card_stroke"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Interview Topics -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Interview Topics:"
+                android:textColor="@color/colorAccent"
+                android:textSize="12sp"
+                android:fontFamily="sans-serif-bold"
+                android:textAllCaps="true"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/phase_topics"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Interview questions..."
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp"
+                android:lineSpacingExtra="3dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

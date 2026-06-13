@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    
+    <!-- Premium AI-Themed Color Palette -->
+    <color name="background_navy">#0A0F1C</color>
+    <color name="glass_card">#121A2B</color>
+    <color name="ai_bar_surface">#16233A</color>
+    
+    <color name="electric_cyan">#00D4FF</color>
+    <color name="royal_blue">#3B82F6</color>
+    <color name="emerald_green">#10B981</color>
+    <color name="soft_orange">#F59E0B</color>
+
+    <!-- UI/UX Text Elements -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B3BDD1</color>
+    <color name="text_muted">#7D8AA6</color>
+
+    <!-- Maintain compatibility shortcuts -->
+    <color name="colorPrimary">#3B82F6</color>
+    <color name="colorPrimaryDark">#0A0F1C</color>
+    <color name="colorAccent">#00D4FF</color>
+    
+    <!-- Gradients & Cards -->
+    <color name="gradient_start">#0A0F1C</color>
+    <color name="gradient_center">#0C1324</color>
+    <color name="gradient_end">#141F3A</color>
+    <color name="glass_card_stroke">#1E293B</color>
+    <color name="input_background">#16233A</color>
+    <color name="input_focused_border">#00D4FF</color>
+    <color name="error_red">#EF4444</color>
+    <color name="success_green">#10B981</color>
+
+    <!-- Strict Feature Card Accents -->
+    <color name="roadmap_accent">#00D4FF</color>
+    <color name="roadmap_border">#1A2F3D</color>
+    
+    <color name="mentor_accent">#2EE59D</color>
+    <color name="mentor_border">#1F3E32</color>
+    
+    <color name="interview_accent">#FFCC66</color>
+    <color name="interview_border">#3E3A24</color>
+    
+    <color name="assessment_accent">#6C7CFF</color>
+    <color name="assessment_border">#2B2E4A</color>
+    
+    <color name="resume_accent">#4DA3FF</color>
+    <color name="resume_border">#25364A</color>
+    
+    <color name="dream_job_accent">#B57BFF</color>
+    <color name="dream_job_border">#3A2A4A</color>
+</resources>

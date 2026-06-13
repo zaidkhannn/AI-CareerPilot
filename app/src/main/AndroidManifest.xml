@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Add Internet Permission for API Connection -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    
+    <!-- Add Audio Permission for Voice Interviewer -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <!-- Allow querying Speech Recognition Service on API 30+ -->
+    <queries>
+        <intent>
+            <action android:name="android.speech.RecognitionService" />
+        </intent>
+    </queries>
+
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/ic_app_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ic_app_logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AiCareerPilot">
+        
+        <!-- Splash Activity - App Launcher -->
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AiCareerPilot">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Login Activity -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Register Activity -->
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Main Dashboard Activity -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Career Roadmap Activity -->
+        <activity
+            android:name=".CareerRoadmapActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Dream Job Planner Activity -->
+        <activity
+            android:name=".DreamJobPlannerActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Interview Preparation Activity -->
+        <activity
+            android:name=".InterviewPrepActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Interview Setup Activity -->
+        <activity
+            android:name=".InterviewSetupActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Interview Simulator Activity -->
+        <activity
+            android:name=".InterviewSimulatorActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Project Suggestions Activity -->
+        <activity
+            android:name=".ProjectSuggestionsActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Resume Analyzer Activity -->
+        <activity
+            android:name=".ResumeAnalyzerActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Profile Activity -->
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- AI Test Console Activity -->
+        <activity
+            android:name=".AiTestActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Technical Assessment Activity -->
+        <activity
+            android:name=".TechAssessmentActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Mentor Connect Activity -->
+        <activity
+            android:name=".MentorConnectActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+            
+    </application>
+
+</manifest>
