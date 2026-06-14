@@ -2,7 +2,7 @@
 
 # 🚀 AI CareerPilot
 
-### AI-Powered Voice Interview Simulator for Android
+### AI-Powered Career Guidance & Placement Preparation App for Android
 
 [![Android](https://img.shields.io/badge/Platform-Android-green.svg)](https://android.com)
 [![Java](https://img.shields.io/badge/Language-Java-orange.svg)](https://www.java.com)
@@ -10,7 +10,7 @@
 [![Groq](https://img.shields.io/badge/AI-Groq%20LLaMA-purple.svg)](https://groq.com)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-*Practice FAANG-style interviews with an AI voice interviewer — anytime, anywhere.*
+
 
 </div>
 
@@ -18,7 +18,9 @@
 
 ## 📱 Overview
 
-**AI CareerPilot** is a cutting-edge Android application that simulates real job interviews using AI-powered voice interaction. Built with Java and powered by Groq's ultra-fast LLaMA model, it provides an immersive, adaptive interview experience that helps developers land their dream jobs at top tech companies.
+**CareerPilot AI is a smart Android application designed to help students and job seekers prepare for their careers and secure better opportunities. Powered by Groq AI, the platform provides personalized career guidance, interview preparation, resume analysis, technical assessments, and an intelligent AI assistant that answers career-related questions in real time.
+
+The application combines multiple career development tools into a single platform, enabling users to track their progress, improve their skills, prepare for interviews, and plan their journey toward their dream job.
 
 ---
 
