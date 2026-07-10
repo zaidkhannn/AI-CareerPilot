@@ -52,7 +52,7 @@ The application combines multiple career development tools into a single platfor
 
 ---
 
-## 🚀 Getting Started
+## 🚀Getting Started
 
 ### Prerequisites
 
@@ -76,7 +76,7 @@ The application combines multiple career development tools into a single platfor
 
    Create or edit the `local.properties` file in the **root of the project** (same level as `build.gradle`):
 
-   ```properties
+   ```propertie
    sdk.dir=YOUR_ANDROID_SDK_PATH
    GROQ_API_KEY=your_groq_api_key_here
    ```
