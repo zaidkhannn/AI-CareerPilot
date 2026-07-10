@@ -16,7 +16,7 @@
 
 ---
 
-## 📱 Overview
+## 📱 Overview..
 
 **CareerPilot AI is a smart Android application designed to help students and job seekers prepare for their careers and secure better opportunities. Powered by Groq AI, the platform provides personalized career guidance, interview preparation, resume analysis, technical assessments, and an intelligent AI assistant that answers career-related questions in real time.
 
