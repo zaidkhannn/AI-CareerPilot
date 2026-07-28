@@ -52,7 +52,7 @@ The application combines multiple career development tools into a single platfor
 
 ---
 
-## 🚀Getting Started
+## 🚀Getting Started...
 
 ### Prerequisites
 
@@ -153,7 +153,7 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 
 ---
 
-## 👨‍💻Author
+## 👨‍💻Author...
 
 **Zaid Khan** — [@zaidkhannn](https://github.com/zaidkhannn)
 
