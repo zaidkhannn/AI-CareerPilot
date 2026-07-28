@@ -2,7 +2,7 @@
 
 # 🚀 AI CareerPilot
 
-### AI-Powered Career Guidance & Placement Preparation App for Android
+### AI-Powered Career Guidance & Placement Preparation App for Android...
 
 [![Android](https://img.shields.io/badge/Platform-Android-green.svg)](https://android.com)
 [![Java](https://img.shields.io/badge/Language-Java-orange.svg)](https://www.java.com)
