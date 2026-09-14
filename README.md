@@ -60,7 +60,7 @@ The application combines multiple career development tools into a single platfor
 - Android device or emulator (API 24+)
 - A [Groq API key](https://console.groq.com) (free tier available)
 
-### Installation
+### Installation of application
 
 1. **Clone the repository**
    ```bash
