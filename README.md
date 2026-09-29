@@ -113,7 +113,7 @@ Download the latest AI-CareerPilot APK to install on your device.
 The latest installable APK is available in the [GitHub Releases](https://github.com/zaidkhannn/AI-CareerPilot/releases) section.
 
 ### 🌐 View Android Application Web Demonstration
-Explore the features and UI without installing the app: **[Live Web Showcase](https://zaidkhan-project.vercel.app)**
+Explore the features and UI without installing the app: **[Live Web Showcase](https://web-mu-livid-91.vercel.app)**
 
 ## Demo
 
