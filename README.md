@@ -2,6 +2,9 @@
 
 **AI-CareerPilot** is an AI-powered career companion Android application designed to provide personalized career roadmaps, conduct voice-based interview simulations, analyze resumes, and evaluate technical skills using large language models.
 
+### 📱 Download AI-CareerPilot
+The latest installable APK is available in the [GitHub Releases](https://github.com/zaidkhannn/AI-CareerPilot/releases) section.
+
 ## Overview
 
 AI-CareerPilot is designed for students, job seekers, and early-career professionals who need structured guidance and realistic interview practice. The application acts as a personal career mentor, leveraging the Groq API (Qwen 3.8-27b) to deliver tailored advice, dynamic career path mapping, and real-time voice interview simulations.
