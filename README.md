@@ -5,6 +5,9 @@
 ### 📱 Download AI-CareerPilot
 The latest installable APK is available in the [GitHub Releases](https://github.com/zaidkhannn/AI-CareerPilot/releases) section.
 
+### 🌐 View Android Application Web Demonstration
+Explore the features and UI without installing the app: **[Live Web Showcase](https://zaidkhan-project.vercel.app)**
+
 ## Overview
 
 AI-CareerPilot is designed for students, job seekers, and early-career professionals who need structured guidance and realistic interview practice. The application acts as a personal career mentor, leveraging the Groq API (Qwen 3.8-27b) to deliver tailored advice, dynamic career path mapping, and real-time voice interview simulations.
@@ -108,6 +111,9 @@ Download the latest AI-CareerPilot APK to install on your device.
 
 ### 📱 Download AI-CareerPilot
 The latest installable APK is available in the [GitHub Releases](https://github.com/zaidkhannn/AI-CareerPilot/releases) section.
+
+### 🌐 View Android Application Web Demonstration
+Explore the features and UI without installing the app: **[Live Web Showcase](https://zaidkhan-project.vercel.app)**
 
 ## Demo
 
