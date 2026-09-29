@@ -4,17 +4,17 @@ import { motion } from "framer-motion";
 import { ArrowRight, Download, Map, Mic, FileText, Code, Users, Target } from "lucide-react";
 
 export default function Home() {
-  const fadeInUp = {
+  const fadeInUp: any = {
     hidden: { opacity: 0, y: 40 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
   };
 
-  const scaleUp = {
+  const scaleUp: any = {
     hidden: { opacity: 0, scale: 0.8 },
     visible: { opacity: 1, scale: 1, transition: { duration: 0.8, type: "spring", bounce: 0.4 } }
   };
 
-  const staggerContainer = {
+  const staggerContainer: any = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
