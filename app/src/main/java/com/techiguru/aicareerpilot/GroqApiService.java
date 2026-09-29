@@ -20,7 +20,7 @@ public class GroqApiService {
 
     private static final String TAG = "GroqApiService";
     private static final String API_URL = "https://api.groq.com/openai/v1/chat/completions";
-    private static final String MODEL_NAME = "llama-3.1-8b-instant";
+    private static final String MODEL_NAME = "qwen/qwen3.8-27b";
     private static final MediaType JSON_MEDIA_TYPE = MediaType.get("application/json; charset=utf-8");
 
     private static final ExecutorService executorService = Executors.newSingleThreadExecutor();
@@ -61,14 +61,14 @@ public class GroqApiService {
             try {
                 JSONObject requestBody = new JSONObject();
                 requestBody.put("model", MODEL_NAME);
-                requestBody.put("max_tokens", 1024);
+                requestBody.put("max_tokens", 8192);
                 requestBody.put("temperature", 0.7);
 
                 JSONArray messagesArray = new JSONArray();
 
                 JSONObject systemMessage = new JSONObject();
                 systemMessage.put("role", "system");
-                systemMessage.put("content", "You are CareerPilot AI, a professional AI career assistant.");
+                systemMessage.put("content", "/no_think\nYou are CareerPilot AI, a professional AI career assistant.");
                 messagesArray.put(systemMessage);
 
                 JSONObject messageObject = new JSONObject();
@@ -150,6 +150,17 @@ public class GroqApiService {
 
         executorService.execute(() -> {
             try {
+                // Prepend /no_think to the first message to disable thinking mode
+                if (messages.length() > 0) {
+                    try {
+                        JSONObject firstMsg = messages.getJSONObject(0);
+                        String content = firstMsg.optString("content", "");
+                        if (!content.startsWith("/no_think")) {
+                            firstMsg.put("content", "/no_think\n" + content);
+                        }
+                    } catch (Exception ignored) {}
+                }
+
                 JSONObject requestBody = new JSONObject();
                 requestBody.put("model", MODEL_NAME);
                 requestBody.put("max_tokens", 1024);
@@ -216,6 +227,10 @@ public class GroqApiService {
         }
 
         String content = message.optString("content", "").trim();
+        // Strip <think>...</think> reasoning blocks from thinking models (e.g. qwen)
+        if (!content.isEmpty()) {
+            content = content.replaceAll("(?s)<think>.*?</think>", "").trim();
+        }
         if (!content.isEmpty()) {
             return content;
         }

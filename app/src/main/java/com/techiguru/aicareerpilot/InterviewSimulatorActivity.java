@@ -949,6 +949,11 @@ public class InterviewSimulatorActivity extends AppCompatActivity {
     private void parseAndDisplayEvaluation(String responseText) {
         try {
             String cleanJson = responseText.trim();
+
+            // Strip <think>...</think> blocks (reasoning models like qwen)
+            cleanJson = cleanJson.replaceAll("(?s)<think>.*?</think>", "").trim();
+
+            // Strip markdown code fences
             if (cleanJson.startsWith("```json")) {
                 cleanJson = cleanJson.substring(7);
             } else if (cleanJson.startsWith("```")) {
@@ -958,6 +963,13 @@ public class InterviewSimulatorActivity extends AppCompatActivity {
                 cleanJson = cleanJson.substring(0, cleanJson.length() - 3);
             }
             cleanJson = cleanJson.trim();
+
+            // Fallback: extract the JSON object between first '{' and last '}'
+            int jsonStart = cleanJson.indexOf('{');
+            int jsonEnd = cleanJson.lastIndexOf('}');
+            if (jsonStart >= 0 && jsonEnd > jsonStart) {
+                cleanJson = cleanJson.substring(jsonStart, jsonEnd + 1);
+            }
 
             JSONObject root = new JSONObject(cleanJson);
             int score = root.optInt("score", 75);

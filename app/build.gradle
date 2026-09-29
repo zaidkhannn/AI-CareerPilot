@@ -51,6 +51,9 @@ dependencies {
     implementation libs.constraintlayout
     implementation libs.material
     implementation libs.okhttp
+    implementation libs.markwon.core
+    implementation libs.markwon.strikethrough
+    implementation libs.markwon.tables
     testImplementation libs.junit
     androidTestImplementation libs.espresso.core
     androidTestImplementation libs.ext.junit

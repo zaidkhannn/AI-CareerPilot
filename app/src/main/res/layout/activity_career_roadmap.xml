@@ -182,430 +182,73 @@
         </androidx.cardview.widget.CardView>
 
         <!-- Loading Progress -->
-        <RelativeLayout
+        <LinearLayout
             android:id="@+id/roadmap_loading_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
             android:visibility="gone"
-            android:layout_marginBottom="12dp">
+            android:layout_marginBottom="12dp"
+            android:layout_marginTop="32dp">
 
             <ProgressBar
                 android:id="@+id/roadmap_progress_bar"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:indeterminate="true"
                 android:indeterminateTint="@color/colorAccent" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="8dp"
-                android:text="AI Architecting Roadmap..."
-                android:textColor="@color/colorAccent"
-                android:textSize="12sp"
+                android:layout_marginTop="12dp"
+                android:text="Generating your roadmap..."
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp"
                 android:fontFamily="sans-serif-medium" />
 
-        </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="This may take a few seconds"
+                android:textColor="@color/text_muted"
+                android:textSize="11sp" />
 
-        <!-- Scrollable content area for generated cards -->
+        </LinearLayout>
+
+        <!-- Scrollable Markdown Response Area -->
         <ScrollView
+            android:id="@+id/roadmap_response_scroll"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:fillViewport="true"
-            android:scrollbars="none">
+            android:scrollbars="vertical"
+            android:scrollbarThumbVertical="@color/glass_card_stroke"
+            android:fadingEdge="vertical"
+            android:fadingEdgeLength="24dp"
+            android:visibility="gone">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:paddingBottom="24dp">
 
-                <!-- Dynamic Basic Summary Card (Duration, Phase count, Difficulty) -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/roadmap_summary_card"
+                <!-- Markdown Rendered Content -->
+                <TextView
+                    android:id="@+id/roadmap_markdown_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="12dp"
-                    android:visibility="gone"
-                    app:cardCornerRadius="14dp"
-                    app:cardBackgroundColor="@color/glass_card">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:padding="14dp"
-                        android:gravity="center">
-
-                        <!-- Col 1: Total Phases -->
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/roadmap_phases_val"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="0"
-                                android:textColor="@color/colorAccent"
-                                android:textSize="16sp"
-                                android:fontFamily="sans-serif-black" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Total Phases"
-                                android:textColor="@color/text_secondary"
-                                android:textSize="11sp"
-                                android:layout_marginTop="2dp" />
-
-                        </LinearLayout>
-
-                        <View
-                            android:layout_width="1dp"
-                            android:layout_height="32dp"
-                            android:background="@color/glass_card_stroke" />
-
-                        <!-- Col 2: Completion Time -->
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/roadmap_time_val"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="-"
-                                android:textColor="@color/text_primary"
-                                android:textSize="14sp"
-                                android:fontFamily="sans-serif-bold" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Duration"
-                                android:textColor="@color/text_secondary"
-                                android:textSize="11sp"
-                                android:layout_marginTop="2dp" />
-
-                        </LinearLayout>
-
-                        <View
-                            android:layout_width="1dp"
-                            android:layout_height="32dp"
-                            android:background="@color/glass_card_stroke" />
-
-                        <!-- Col 3: Difficulty -->
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/roadmap_difficulty_val"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="-"
-                                android:textColor="@color/text_primary"
-                                android:textSize="14sp"
-                                android:fontFamily="sans-serif-bold" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Difficulty"
-                                android:textColor="@color/text_secondary"
-                                android:textSize="11sp"
-                                android:layout_marginTop="2dp" />
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <!-- NEW: Career Insights Card -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/roadmap_insights_card"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="12dp"
-                    android:visibility="gone"
-                    app:cardCornerRadius="14dp"
-                    app:cardBackgroundColor="@color/glass_card">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="16dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Career Insights"
-                            android:textColor="@color/colorAccent"
-                            android:textSize="12sp"
-                            android:fontFamily="sans-serif-bold"
-                            android:textAllCaps="true"
-                            android:layout_marginBottom="12dp" />
-
-                        <!-- Insights columns layout -->
-                        <GridLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:columnCount="2"
-                            android:rowCount="2"
-                            android:alignmentMode="alignMargins">
-
-                            <!-- Salary -->
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_columnWeight="1"
-                                android:orientation="vertical"
-                                android:layout_marginBottom="10dp"
-                                android:layout_marginEnd="8dp">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Avg Salary Range"
-                                    android:textColor="@color/text_secondary"
-                                    android:textSize="11sp" />
-
-                                <TextView
-                                    android:id="@+id/roadmap_salary_val"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="-"
-                                    android:textColor="@color/text_primary"
-                                    android:textSize="13sp"
-                                    android:fontFamily="sans-serif-bold" />
-                            </LinearLayout>
-
-                            <!-- Market Demand -->
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_columnWeight="1"
-                                android:orientation="vertical"
-                                android:layout_marginBottom="10dp"
-                                android:layout_marginStart="8dp">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Market Demand"
-                                    android:textColor="@color/text_secondary"
-                                    android:textSize="11sp" />
-
-                                <TextView
-                                    android:id="@+id/roadmap_demand_val"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="-"
-                                    android:textColor="@color/text_primary"
-                                    android:textSize="13sp"
-                                    android:fontFamily="sans-serif-bold" />
-                            </LinearLayout>
-
-                            <!-- Competition -->
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_columnWeight="1"
-                                android:orientation="vertical"
-                                android:layout_marginEnd="8dp">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Competition Level"
-                                    android:textColor="@color/text_secondary"
-                                    android:textSize="11sp" />
-
-                                <TextView
-                                    android:id="@+id/roadmap_competition_val"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="-"
-                                    android:textColor="@color/text_primary"
-                                    android:textSize="13sp"
-                                    android:fontFamily="sans-serif-bold" />
-                            </LinearLayout>
-
-                            <!-- Future Growth -->
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_columnWeight="1"
-                                android:orientation="vertical"
-                                android:layout_marginStart="8dp">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Future Growth"
-                                    android:textColor="@color/text_secondary"
-                                    android:textSize="11sp" />
-
-                                <TextView
-                                    android:id="@+id/roadmap_growth_val"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="-"
-                                    android:textColor="@color/text_primary"
-                                    android:textSize="13sp"
-                                    android:fontFamily="sans-serif-bold" />
-                            </LinearLayout>
-
-                        </GridLayout>
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <!-- Container for Phase Cards -->
-                <LinearLayout
-                    android:id="@+id/roadmap_cards_container"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical" />
-
-                <!-- NEW: Final Outcome Card -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/roadmap_outcome_card"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="12dp"
-                    android:visibility="gone"
-                    app:cardCornerRadius="14dp"
-                    app:cardBackgroundColor="@color/glass_card">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="16dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Final Career Outcome"
-                            android:textColor="@color/colorAccent"
-                            android:textSize="12sp"
-                            android:fontFamily="sans-serif-bold"
-                            android:textAllCaps="true"
-                            android:layout_marginBottom="12dp" />
-
-                        <!-- Job Readiness progress -->
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="16dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Estimated Job Readiness"
-                                android:textColor="@color/text_primary"
-                                android:textSize="13sp"
-                                android:fontFamily="sans-serif-medium" />
-
-                            <TextView
-                                android:id="@+id/roadmap_readiness_pct"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:text="0%"
-                                android:textColor="@color/colorAccent"
-                                android:textSize="13sp"
-                                android:fontFamily="sans-serif-bold" />
-
-                            <ProgressBar
-                                android:id="@+id/roadmap_readiness_progress"
-                                style="?android:attr/progressBarStyleHorizontal"
-                                android:layout_width="match_parent"
-                                android:layout_height="6dp"
-                                android:progress="0"
-                                android:layout_marginTop="20dp"
-                                android:progressTint="@color/colorAccent"
-                                android:progressBackgroundTint="@color/glass_card_stroke" />
-
-                        </RelativeLayout>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Skills you will obtain:"
-                            android:textColor="@color/text_primary"
-                            android:textSize="13sp"
-                            android:fontFamily="sans-serif-bold"
-                            android:layout_marginBottom="4dp" />
-
-                        <TextView
-                            android:id="@+id/roadmap_outcome_skills"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="• Skills..."
-                            android:textColor="@color/text_secondary"
-                            android:textSize="13sp"
-                            android:lineSpacingExtra="4dp" />
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <!-- NEW: Job Roles Card -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/roadmap_roles_card"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="12dp"
-                    android:visibility="gone"
-                    app:cardCornerRadius="14dp"
-                    app:cardBackgroundColor="@color/glass_card">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="16dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Target Job Roles"
-                            android:textColor="@color/colorAccent"
-                            android:textSize="12sp"
-                            android:fontFamily="sans-serif-bold"
-                            android:textAllCaps="true"
-                            android:layout_marginBottom="8dp" />
-
-                        <TextView
-                            android:id="@+id/roadmap_job_roles_val"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Frontend Developer, UI Developer"
-                            android:textColor="@color/text_primary"
-                            android:textSize="13sp"
-                            android:fontFamily="sans-serif-bold"
-                            android:lineSpacingExtra="3dp" />
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
+                    android:textColor="@color/text_primary"
+                    android:textSize="14.5sp"
+                    android:lineSpacingExtra="4dp"
+                    android:fontFamily="sans-serif"
+                    android:textIsSelectable="true"
+                    android:padding="4dp" />
 
             </LinearLayout>
 
